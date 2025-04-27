@@ -1,0 +1,10 @@
+
+@layer components {
+  .lost-item-card {
+    @apply rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg bg-white dark:bg-card;
+  }
+  
+  .iiit-gradient {
+    @apply bg-gradient-to-r from-iiit-blue to-iiit-blue-dark;
+  }
+}

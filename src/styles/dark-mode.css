@@ -1,0 +1,56 @@
+
+@layer components {
+  /* Dark mode improvements */
+  .dark .dropdown-content {
+    @apply bg-card border-border shadow-xl;
+  }
+  
+  .dark .card-highlight {
+    @apply border-primary/30 bg-card/95;
+  }
+  
+  /* Glassmorphism for dark mode */
+  .dark .glass-card {
+    @apply bg-card/80 backdrop-blur-md border-white/10;
+  }
+  
+  .dark .nav-item {
+    @apply text-foreground/90 hover:text-foreground;
+  }
+  
+  /* Better text contrast in dark mode */
+  .dark .text-muted {
+    @apply text-gray-300;
+  }
+  
+  /* Button improvements for dark mode */
+  .dark .btn-ghost {
+    @apply hover:bg-white/10 active:bg-white/20;
+  }
+
+  /* Additional dark mode improvements */
+  .dark .message-bubble {
+    @apply bg-primary/20 text-foreground;
+  }
+  
+  .dark .message-bubble-own {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .dark .input-field {
+    @apply bg-muted/50 border-border;
+  }
+  
+  .dark .hover-item:hover {
+    @apply bg-secondary/60;
+  }
+  
+  .dark .badge {
+    @apply bg-secondary/70 text-foreground;
+  }
+  
+  /* Layout elements */
+  .dark .main-container {
+    @apply bg-background border-border shadow-md shadow-black/20;
+  }
+}

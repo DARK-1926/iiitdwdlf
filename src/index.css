@@ -1,0 +1,167 @@
+@import './styles/utilities.css';
+@import './styles/dark-mode.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 50% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 11%;
+
+    --primary: 210 100% 20%;
+    --primary-foreground: 210 50% 98%;
+
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 210 50% 11%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 15% 50%;
+
+    --accent: 210 30% 96%;
+    --accent-foreground: 210 50% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 210 100% 20%;
+
+    --radius: 0.5rem;
+
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 47.4% 15.2%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 47.4% 13.2%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 20.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75.1%;
+
+    --accent: 217.2 32.6% 20.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 22.5%;
+    --input: 217.2 32.6% 22.5%;
+    --ring: 224.3 76.3% 60%;
+    
+    --sidebar-background: 222.2 47.4% 11.2%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217.2 91.2% 59.8%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217.2 32.6% 20.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 22.5%;
+    --sidebar-ring: 224.3 76.3% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading animate-fadein;
+    font-family: 'Montserrat', var(--font-heading), sans-serif;
+  }
+
+  p, span, div, a, button, input {
+    @apply font-body animate-fadein;
+    font-family: 'Inter', var(--font-body), sans-serif;
+  }
+
+  .animate-fadein {
+    animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse-gentle 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-gentle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@layer utilities {
+  .dark .text-neon-blue {
+    color: #00e6ff;
+    text-shadow: 0 0 8px #00e6ff, 0 0 16px #00e6ff, 0 0 32px #00e6ff;
+  }
+  .dark .text-neon-cyan {
+    color: #39ff14;
+    text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14, 0 0 32px #39ff14;
+  }
+  .dark .text-neon-magenta {
+    color: #fff;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 32px #fff;
+  }
+  .dark .text-stroke-white {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff;
+  }
+  .dark .border-magenta-400 {
+    border-color: #fff !important;
+  }
+  .animate-gradient-bg {
+    background: linear-gradient(120deg, #fff 0%, #333399 100%, #00e6ff 60%);
+    background-size: 200% 200%;
+    animation: gradientMove 6s ease-in-out infinite;
+    opacity: 0.25;
+    border-radius: 1rem;
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} 
