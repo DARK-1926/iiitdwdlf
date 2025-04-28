@@ -122,7 +122,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const resetPassword = async (email: string) => {
     console.log("Resetting password for:", email);
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: 'https://iiitdwd.vercel.app/reset-password?reset=true'
+      redirectTo: 'https://iiitdwd.vercel.app/reset-password?reset=true#'
     });
     return { error };
   };
